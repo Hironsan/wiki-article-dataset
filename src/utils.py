@@ -10,7 +10,7 @@ sent_detector = nltk.RegexpTokenizer(u'[^　！？。]*[！？。.\n]')
 
 
 def tokenize(text):
-    return t.parse(text)
+    return t.parse(text).strip()
 
 
 def split_text(text):
@@ -26,7 +26,7 @@ def list_files(dir_path):
 def read_jsonl(filepath):
     with open(filepath) as f:
         for line in f:
-            yield json.load(line)
+            yield json.loads(line)
 
 
 def extract_text(article):
@@ -42,7 +42,7 @@ def main(args):
                 text = extract_text(article)
                 sents = split_text(text)
                 sents = [sent.strip() for sent in sents if sent.strip()]
-                text = '\t'.join(' '.join(tokenize(sent)) for sent in sents)
+                text = '\t'.join(tokenize(sent) for sent in sents)
                 f.write(f'{text}\n')
 
 
@@ -51,3 +51,4 @@ if __name__ == '__main__':
     parser.add_argument('--extracted_dir', help='extracted dir by wikiextractor')
     parser.add_argument('--save_file', default='ja.wikipedia.txt', help='filename')
     args = parser.parse_args()
+    main(args)

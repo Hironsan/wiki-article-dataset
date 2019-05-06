@@ -1,10 +1,10 @@
 # wiki-article-dataset
-wiki-article-dataset is a text corpus from the web (japanese wikipedia).
 
+wiki-article-dataset is a text corpus from the web (japanese wikipedia).
 
 You can download this corpus from the following link:
 
-* [ja.wikipedia-article.zip](https://s3-ap-northeast-1.amazonaws.com/dev.tech-sketch.jp/chakki/public/ja.text8.zip)
+* [ja.wikipedia_250k.zip](https://s3-ap-northeast-1.amazonaws.com/dev.tech-sketch.jp/chakki/public/ja.wikipedia_250k.zip)
 
 ## Format
 
